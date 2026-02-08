@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Ayesha 🤍</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+body{
+  height:100vh;
+  background:linear-gradient(135deg,#0b0014,#2b0036,#ff5da2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  overflow:hidden;
+}
+
+/* scenes */
+.scene{display:none;flex-direction:column;align-items:center;text-align:center}
+.scene.active{display:flex;animation:fade 1s}
+@keyframes fade{from{opacity:0;transform:scale(.9)}to{opacity:1}}
+
+/* door */
+.door{
+  width:160px;height:260px;
+  background:linear-gradient(#1a001f,#000);
+  border-radius:10px;
+  box-shadow:0 20px 40px rgba(0,0,0,.6);
+  cursor:pointer;
+}
+.knock{margin-top:20px;font-size:22px;animation:blink 1.5s infinite}
+@keyframes blink{50%{opacity:.4}}
+
+/* floating */
+.heart,.star{
+  position:absolute;
+  animation:float 6s infinite;
+}
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-40px)}
+  100%{transform:translateY(0)}
+}
+
+/* buttons */
+button{
+  margin-top:20px;
+  padding:10px 24px;
+  border:none;border-radius:20px;
+  background:linear-gradient(135deg,#ff5da2,#9b4dff);
+  color:white;
+  cursor:pointer;
+  font-size:14px;
+}
+button:hover{transform:scale(1.08)}
+
+/* boxes */
+.white-box{
+  background:white;
+  color:#2b0036;
+  padding:18px;
+  border-radius:14px;
+  max-width:320px;
+  margin-top:20px;
+}
+
+/* input */
+input{
+  padding:8px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  width:200px;
+}
+
+/* poetry */
+.poetry{
+  font-size:16px;
+  line-height:1.9;
+  text-align:right;
+  font-family:serif;
+}
+
+/* hearts feedback */
+.rate span{
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* final */
+.final{
+  font-family:Pacifico;
+  font-size:26px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- floating decor -->
+<div class="heart" style="left:10%;top:20%">💖</div>
+<div class="star" style="right:15%;top:30%">✨</div>
+
+<!-- SCENE 1 -->
+<div class="scene active" id="s1">
+  <div class="door" onclick="go(2)"></div>
+  <div class="knock">Thak… Thak… 🚪</div>
+</div>
+
+<!-- SCENE 2 -->
+<div class="scene" id="s2">
+  <h2>🌸 Is this Ayesha? 🌸</h2>
+  <button onclick="go(3)">Yes 🤍</button>
+</div>
+
+<!-- SCENE 3 -->
+<div class="scene" id="s3">
+  <div class="white-box">
+    <p>How do you know Sadia?</p><br>
+    <input placeholder="5 words only">
+    <br>
+    <button onclick="go(4)">Submit 💌</button>
+  </div>
+</div>
+
+<!-- SCENE 4 -->
+<div class="scene" id="s4">
+  <div class="white-box">Ohh… Sadia is your bestie 🤍</div>
+  <div class="white-box">You know her from 10th class</div>
+  <div class="white-box">Hana yarr… she misses you so much 🥺</div>
+  <p style="margin-top:20px">Do you miss her?</p>
+  <button onclick="go(5)">Yes… always 💗</button>
+</div>
+
+<!-- SCENE 5 -->
+<div class="scene" id="s5">
+  <button onclick="go(6)">📜 Read her poetry</button>
+</div>
+
+<!-- SCENE 6 -->
+<div class="scene" id="s6">
+  <div class="white-box poetry">
+کن لفظوں میں لکھوں اہمیت تیری<br>
+اے دوست تیرے بنا ہم ادھورے ہیں<br>
+میرے دل کے ہر کونے میں<br>
+تیرا انتظار ہے<br>
+تیرا ذکر ہے<br>
+تیرا زمانہ ہے<br>
+تیرا تصور ہے<br>
+میرا دل ہے<br>
+میری تو محبت ہے<br>
+یہ سب اللّٰہ کے لیے ہے<br>
+اس نا چیز کا یہ تحفہ قبول کرو<br>
+سمجھو<br>
+تو<br>
+یہ مذاق تھوڑی ہے
+  </div>
+
+  <p style="margin-top:15px">How did it feel?</p>
+  <div class="rate">
+    <span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span>
+  </div>
+
+  <button onclick="go(7)">Read note 🤍</button>
+</div>
+
+<!-- SCENE 7 -->
+<div class="scene" id="s7">
+  <div class="white-box">
+    <b>Hey Ayesha, my bestie 🤍</b><br><br>
+    You are one of the most precious people in my life<br>
+    Your presence makes everything lighter<br>
+    You understand me without words<br>
+    Your friendship is my blessing<br>
+    Every memory with you is special<br>
+    Distance never changed us<br>
+    You’re always in my duas<br>
+    Thank you for choosing me<br>
+    Thank you for trusting my heart<br>
+    Forever grateful for us 🤍
+  </div>
+  <button onclick="go(8)">➡️</button>
+</div>
+
+<!-- FINAL -->
+<div class="scene" id="s8">
+  <div class="final">♾️ Forever Friendship ♾️</div>
+  <p>Pakki dosti 💗</p>
+</div>
+
+<script>
+function go(n){
+  document.querySelectorAll('.scene').forEach(s=>s.classList.remove('active'))
+  document.getElementById('s'+n).classList.add('active')
+}
+</script>
+
+</body>
+</html>
